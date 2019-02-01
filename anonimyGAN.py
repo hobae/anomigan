@@ -216,24 +216,27 @@ class ANOMIGAN():
                                                        padding='SAME',
                                                        activation=tf.nn.tanh)
     
-            conv6 = tf.layers.conv1d(conv1d_t5, filters=8, 
+            bn5 = tf.layers.batch_normalization(conv1d_t5)
+            conv1d_t6 = tf.layers.conv1d(bn5, filters=8, 
                                                        kernel_size=2,
                                                        strides=1,
                                                        padding='SAME',
                                                        activation=tf.nn.tanh)
  
-            conv7 = tf.layers.conv1d(conv6, filters=16, 
+            bn6 = tf.layers.batch_normalization(conv1d_t6)
+            conv1d_t7 = tf.layers.conv1d(bn6, filters=16, 
                                                        kernel_size=2,
                                                        strides=1,
                                                        padding='SAME',
                                                        activation=tf.nn.tanh)
 
-            conv8 = tf.layers.conv1d(conv7, filters=self.num_feature, 
+            bn7 = tf.layers.batch_normalization(conv1d_t7)
+            conv1d_t8 = tf.layers.conv1d(bn7, filters=self.num_feature, 
                                                        kernel_size=2,
                                                        strides=1,
                                                        padding='SAME',
                                                        activation=tf.nn.tanh)
-            flatten = tf.layers.flatten(conv8)
+            flatten = tf.layers.flatten(conv1d_t8)
             out = tf.layers.dense(flatten, self.num_feature, activation=tf.nn.relu)
             return out
 
