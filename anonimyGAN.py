@@ -187,7 +187,6 @@ class ANOMIGAN():
                                                         padding='VALID',
                                                         activation=tf.nn.relu)
             bn1 = tf.layers.batch_normalization(conv1d_t1)
-            
             conv1d_t2 = tf.layers.conv1d(bn1, filters=32,
                                                        kernel_size=2,
                                                        strides=1,
@@ -195,7 +194,6 @@ class ANOMIGAN():
                                                        activation=tf.nn.tanh)
 
             bn2 = tf.layers.batch_normalization(conv1d_t2)
-
             conv1d_t3 = tf.layers.conv1d(bn2, filters=16,
                                                        kernel_size=2,
                                                        strides=1,
