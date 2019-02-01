@@ -175,7 +175,7 @@ class ANOMIGAN():
             xor = tf.bitwise.bitwise_xor(x_btensor, m_btensor)
             random = tf.cast(xor, dtype)
         else:
-            random = x*message % np.amax() 
+            random = x*message % np.amax(x) 
 
     def encoder(self, x, message, mode):
         with tf.variable_scope("encoder"):
