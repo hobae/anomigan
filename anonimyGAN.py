@@ -6,7 +6,6 @@ from keras.layers.convolutional import Convolution1D, MaxPooling1D
 from keras.models import Sequential, Model
 from keras.optimizers import Adam, SGD
 
-
 from scipy import stats
 from scipy.signal import butter, lfilter, freqz
 
@@ -15,7 +14,6 @@ from sklearn.model_selection import StratifiedKFold
 from sklearn.preprocessing import MaxAbsScaler
 from sklearn.model_selection import KFold
 from sklearn.metrics import roc_curve, auc
-
 
 import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 import numpy as np
